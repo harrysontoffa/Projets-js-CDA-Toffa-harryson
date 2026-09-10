@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex12</title>
+  </head>
+  <body>
+    <div class="flex flex-col items-center gap-4 w-[400px] px-8 py-8 bg-white border border-black/60 mx-auto">
+
+      <img id="photo" src="./src/assets/images/Capture d'écran 2026-09-02 142924.png" alt="Mon profile" class="w-32 h-32 rounded-full border-2 border-pink-300 object-cover">
+
+      <p id="nom" class=" text-base font-bold text-center text-black">Bob martin</p>
+
+      <div class="job px-3 py-1 border-2 border-pink-500 rounded bg-white">
+        <p class="text-pink-500 font-bold">Développeur backend</p>
+      </div>
+
+      <p class="bio text-center text-base text-black/60">Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Ea itaque ipsa delectus rem nostrum
+        aute nisi minima q</p>
+
+      <div class="flex flex-wrap gap-2 justify-center">
+        <div class="badge badge-outline text-black/60!">JavaScript</div>
+        <div class="badge badge-outline">React</div>
+        <div class="badge badge-outline">Node.js</div>
+      </div>
+
+      <div class="text-center w-full">
+        <p id="experience" class=" text-sm mb-2 text-black/60!">📅 4 ans d'expérience</p>
+        <p id="localisation" class=" text-sm mb-4 text-black/60!">📍 Bordeaux, France</p>
+
+        <div class="CTA flex gap-3">
+          <button class="btn btn-primary flex-1">
+            ✉️ Contact
+          </button>
+          <button class="btn btn-outline flex-1">
+            👤 Profil
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="w-[400px] mx-auto mt-4 text-center">
+      <button id="aleatoire" class="btn btn-primary">🎲 Aléatoire</button>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

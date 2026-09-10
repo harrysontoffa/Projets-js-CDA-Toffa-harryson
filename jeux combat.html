@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Personnage {
+            constructor(nom, vie, mana, force, techSecrète) {
+                this.vie = vie;
+                this.force = force;
+                this.mana = mana;
+                this.nom = nom;
+                this.techSecrète = techSecrète;
+
+            }
+            estVivant() {
+                if(this.vie > 0 ) {
+                  return true
+                }
+                return false
+            }
+        }
+        
+        
+        class Sorcier  extends Personnage{
+            constructor (nom, vie, mana, force, rang, techSecrète) { 
+                super(nom, vie, mana, force, techSecrète);
+                this.rang = rang;
+            
+            }
+
+            lancerSort(cible) {
+                const attaquer = prompt("voulez vous lancer un sort")
+                if (attaquer.toLowerCase() === "oui") {
+                  cible.vie = cible.vie - this.force
+                  console.log(cible.nom + " " + "à perdu" + " " + this.force + " " + "PV")
+                }
+                     
+            }
+
+            boirePotion() {
+                const defense = prompt('voulez vous boire une potion de santé')
+                if (defense.toLowerCase() === 'oui') {
+                    this.vie = this.vie + 60
+                    console.log("la potion restaure 60 pv de " +" "+ this.nom)
+
+                }
+            }
+
+            fullBurst(cible) {
+                const tech = prompt('voulez vous lancer votre utltime technique')
+                if (tech.toLowerCase() === 'oui') {
+                    cible.vie = cible.vie - (this.force) * 3
+                    this.mana = this.mana - 90
+                    console.log("cette attaque vous as couter 90 points de mana" )
+                    console.log(this.nom + " " + " à lancer sa technique secrète" + " " + this.techSecrète + " " +"et " + " " + cible.nom + " " + "à perdu " + " " + (this.force)*3 + " " + "pv")
+                }
+
+            }
+        }
+
+
+        class Guerrier extends Personnage {
+            constructor(nom, vie, mana, force, grade, arme, techSecrète){
+                super(nom, vie, mana, force, techSecrète)
+                this.grade = grade;
+                this.arme = arme;
+
+            }
+
+            attaquer(cible) {
+
+                const frapper = prompt("voulez vous frapper l'ennemi ?")
+                if (frapper.toLowerCase() === "oui") {
+                    cible.vie = cible.vie - this.force
+                    console.log( this.nom + " " + "à infliger " + this.force + " " +"points de dégats à " + " " + cible.nom)
+                }
+            }
+
+            attaqueLourde(cible){ 
+                const frapper = prompt("voulez vous effectuer une attaque lourde sur  l'ennemi ?")
+                if (frapper.toLowerCase() === "oui") {
+                    cible.vie = cible.vie - ( (this.force) + 30 )
+                    console.log( this.nom + " " + "à infliger " +( (this.force) + 30 ) + " " +"points de dégats à " + " " + cible.nom)
+                }
+
+            }
+
+            rageMode(cible) {
+                const tech = prompt('voulez vous lancer votre utltime technique')
+                if (tech.toLowerCase() === 'oui') {
+                    cible.vie = cible.vie - (this.force) * 3
+                    console.log(this.nom + " " + " à lancer sa technique secrète" + " " + this.techSecrète + " " +"et " + " " + cible.nom + " " + "à perdu " + " " + (this.force)*3 + " " + "pv")
+                }
+
+            }
+        }
+
+        const Asta = new Sorcier("Asta", 300, 700, 30, "roi marge", "full Burst");
+        const Kratos = new Guerrier("Kratos", 300, 200, 60, "God of war", "Blades of Chaos", "Rage de l'olympe")
+        function combat() {  
+            while(Asta.estVivant() && Kratos.estVivant()) {
+                let Action = prompt('Asta que voulez vous faire ?')
+                if(Action === 'sort'){
+                    Asta.lancerSort(Kratos)
+                }
+                else if ( Action === 'potion') {
+                    Asta.boirePotion(Kratos)
+                }
+                else if(Action === 'full burst') {
+                    Asta.fullBurst(Kratos)
+                }
+                if (!Kratos.estVivant()) {
+                    console.log(Kratos.nom + " est mort. " + Asta.nom + " gagne le combat !")
+                    break
+                }
+
+                Action = prompt('Kratos que voulez vous faire ?')
+
+                if(Action === 'attaque'){
+                    Kratos.attaquer(Asta)
+                }
+                else if ( Action === 'lourd') {
+                    Kratos.attaqueLourde(Asta)
+                }
+                else if(Action === 'rage') {
+                    Kratos.rageMode(Asta)
+                }
+                if (!Asta.estVivant()) {
+                    console.log(Asta.nom + " est mort. " + Kratos.nom + " gagne le combat !")
+                    break
+                }
+ 
+            }
+        }    
+        combat()
+        
+       
+        
+
+
+    </script>
+
+</body>
+</html>
