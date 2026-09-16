@@ -1,15 +1,15 @@
-<script setup lang="ts">
-// import HelloWorld from './components/HelloWorld.vue';
-import AppHeader from './components/AppHeader.vue';
-import AppFooter from './components/AppFooter.vue';
- 
+<template>
+  <div>
+    <h1>Articles Manager (Firebase Realtime Database)</h1>
+    <FirebaseAddArticle></FirebaseAddArticle>
+    <FirebaseListArticles></FirebaseListArticles>
+  </div>
+</template>
+
+<script setup lang="js">
+import FirebaseListArticles from "./components/FirebaseListArticles.vue";
+import FirebaseAddArticle from "./components/FirebaseAddArticle.vue";
 </script>
 
-<template>
-  <AppHeader />
-  <!-- router-view est le composant qui va afficher la page correspondante à la route -->
-  <router-view></router-view>
-  <AppFooter />
- 
-
-</template>
+<style scoped lang="css">
+</style>
