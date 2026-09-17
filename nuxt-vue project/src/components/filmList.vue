@@ -6,9 +6,9 @@
             <input  v-model="filmInput" id="input" type="text" class="border py-2 rounded-sm w-300 ">
             
         </div>
-            <button @click="ajouterBtn" id="ajouterBtn" class="px-100 bg-purple-500 py-2 rounded-sm text-white font-bold">Ajouter à votre liste</button>
+            <button @click="ajouterBtn" id="ajouterBtn" class="px-100 bg-purple-500 cursor-pointer py-2 rounded-sm text-white font-bold">Ajouter à votre liste</button>
             <ul class="flex flex-col gap-4" v-if="listFilms.length > 0">
-                <li @click="deleteFilm(index)"  class=" py-2 w-max rounded-sm  px-4 bg-gray-200 " v-for="(film, index) in listFilms" :key="index">
+                <li @click="deleteFilm(index)"  class=" py-2 w-max cursor-pointer rounded-sm  px-4 bg-gray-200 " v-for="(film, index) in listFilms" :key="index">
                     {{ film }} 🗑️
                 </li>
             </ul>

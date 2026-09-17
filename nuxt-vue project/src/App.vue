@@ -1,14 +1,13 @@
 <template>
-  <div>
-    <h1>Articles Manager (Firebase Realtime Database)</h1>
-    <FirebaseAddArticle></FirebaseAddArticle>
-    <FirebaseListArticles></FirebaseListArticles>
-  </div>
+  <AppHeader />
+  <!-- router-view affiche la page correspondante à la route active -->
+  <router-view></router-view>
+  <AppFooter />
 </template>
 
-<script setup lang="js">
-import FirebaseListArticles from "./components/FirebaseListArticles.vue";
-import FirebaseAddArticle from "./components/FirebaseAddArticle.vue";
+<script setup lang="ts">
+import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
 </script>
 
 <style scoped lang="css">

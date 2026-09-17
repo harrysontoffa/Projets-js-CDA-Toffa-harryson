@@ -36,6 +36,18 @@ const routes: RouteRecordRaw[] = [
         path: '/TpCount',
         component: () => import('../views/TpCount.vue'),
     },
+    {
+        path: '/articles',
+        component: () => import('../views/articles.vue'),
+    },
+    {
+        path: '/login',
+        component: () => import('../views/login.vue'),
+    },
+    {
+        path: '/gestionTache',
+        component: () => import('../views/gestionTache.vue'),
+    },
 ];
 
 const router = createRouter({

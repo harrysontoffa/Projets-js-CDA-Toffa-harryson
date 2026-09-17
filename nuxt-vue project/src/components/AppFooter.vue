@@ -20,5 +20,10 @@
     <a class="link link-hover">Privacy policy</a>
     <a class="link link-hover">Cookie policy</a>
   </nav>
+   <BackToTop />
 </footer>
 </template>
+
+<script setup lang="js">
+import BackToTop from '../components/BackToTop.vue';
+</script>

@@ -15,6 +15,7 @@
         <li><button> <router-link  to="/interpolation">interpolation</router-link></button></li>
         <li><button> <router-link to="/userData">User</router-link></button></li>
         <li><button> <router-link to="/TpCount">Tp</router-link></button></li>
+        <li><button> <router-link to="/login">login</router-link></button></li>
       </ul>
     </div>
     <div class="navbar-end">
